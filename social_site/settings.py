@@ -39,8 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # NEW
-    'accounts.apps.AccountsConfig',
+    'crispy_forms', # pip install django_crispy_forms
+    'accounts.apps.AccountsConfig', # django-admin startapp accounts
 ]
+
+CRISPY_TEMPLATE_PACK = "bootstrap4" # template pack da usare con django_crispy_forms
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -57,7 +60,9 @@ ROOT_URLCONF = 'social_site.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'accounts/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
