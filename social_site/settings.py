@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     # NEW
     'crispy_forms', # pip install django_crispy_forms
     'accounts.apps.AccountsConfig', # django-admin startapp accounts
+    'core.apps.CoreConfig',
+    'forum.apps.ForumConfig',
 ]
 
 CRISPY_TEMPLATE_PACK = "bootstrap4" # template pack da usare con django_crispy_forms
@@ -62,7 +64,10 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
-            os.path.join(BASE_DIR, 'accounts/templates')],
+            os.path.join(BASE_DIR, 'accounts/templates'),
+            os.path.join(BASE_DIR, 'core/templates'),
+            os.path.join(BASE_DIR, 'forrum/templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
